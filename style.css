@@ -211,3 +211,222 @@ button {
         font-size: 16px;
     }
 }
+/* Layout & Canvas Glow */
+.main-content {
+  position: relative;
+  background-color: #0b0d13;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-height: calc(100vh - 70px);
+}
+
+/* Subtle background radial glow behind the hero */
+.glow-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 500px;
+  background: radial-gradient(circle at 50% 20%, rgba(31, 111, 235, 0.18), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  padding: 60px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.version-tag {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  color: #f0f6fc;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #9198a1;
+  margin: 0 0 32px;
+}
+
+/* CTA & Download styling */
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.download-button-group {
+  display: flex;
+  align-items: stretch;
+  background-color: #0078d4;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 120, 212, 0.35);
+  transition: background-color 0.15s ease;
+}
+
+.download-button-group:hover {
+  background-color: #0066b8;
+}
+
+.btn-primary-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-dropdown {
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0 14px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.cta-links {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+.cta-links a,
+.cta-terms a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.cta-links a:hover,
+.cta-terms a:hover {
+  text-decoration: underline;
+}
+
+.cta-terms {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #6e7681;
+}
+
+/* Preview Image / Frame */
+.hero-media-wrapper {
+  width: 100%;
+  max-width: 1080px;
+  margin-top: 10px;
+}
+
+.media-container {
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+}
+
+.hero-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+/* Binary pattern overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 500px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 0);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.download-button-group {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.download-button-group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 120, 212, 0.45);
+}
+
+.btn-dropdown:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+/* Constrain logo size */
+.brand-logo-img {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* Align logo and text cleanly */
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.brand-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
