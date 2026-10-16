@@ -415,7 +415,6 @@ button {
   display: block;
 }
 
-/* Align logo and text cleanly */
 .nav-brand {
   display: inline-flex;
   align-items: center;

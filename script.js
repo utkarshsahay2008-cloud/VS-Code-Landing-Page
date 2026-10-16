@@ -15,7 +15,6 @@ menuToggle.addEventListener("click", () => {
     menuToggle.textContent = isOpen ? "✕" : "☰";
 });
 
-// Close mobile menu after choosing a link
 navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
         navLinks.classList.remove("open");
